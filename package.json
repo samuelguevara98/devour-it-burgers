@@ -1,0 +1,23 @@
+{
+  "name": "clear",
+  "version": "1.0.0",
+  "description": "Devour it burgers!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelguevara98/devour-it-burgers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuelguevara98/devour-it-burgers/issues"
+  },
+  "homepage": "https://github.com/samuelguevara98/devour-it-burgers#readme",
+  "dependencies": {
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1"
+  }
+}
