@@ -1,0 +1,35 @@
+<img src="/assets/img/burger.png" alt="burger">
+<h1>Devour it Burgers</h1>
+<h2>Add Burgers!</h2>
+<form class="create-form">
+    <div class="from-group">
+        <label for="burger">Burger Type:</label>
+        <input type="text" id="burger" name="burgerType">
+    </div>
+    <button type="submit">Add a burger</button>
+</form>
+
+<ul>
+    {{#each burgers}}
+    {{unless devoured}}
+    <li>
+        {{burgerType}}
+        <button class="changeDevour" data-id="{{id}}" data-newburger="{{devoured}}">
+            {{#if devoured}}DEVOURED!{{else}}DEVOURED!{{/if}}
+        </button>
+    </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Burgers that are devoured -</h2>
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    <li>
+        {{burgerType}}
+        <button class="deleteBurger" data-id="{{this.id}}">Delete!</button>
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
