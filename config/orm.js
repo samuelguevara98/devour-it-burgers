@@ -8,16 +8,11 @@ function printQuestionMarks(num) {
     return arr.toString();
 }
 
-const objToSql = (ob) => {
-    var arr = []; 
-
+function objToSql(ob) {
+    // column1=value, column2=value2,...
+    var arr = [];
     for (var key in ob) {
-        var vaulue = ob[key];
-        if (Object.hasOwnProperty.call(ob, key)) {
-            if (typeof value === "string" && value.indexOf(" ") >= 0) {
-                value = "'" + value + "'";
-            }
-        }
+      arr.push(key + "=" + ob[key]);
     }
     return arr.toString();
 }
@@ -40,7 +35,8 @@ var orm = {
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
 
-        console.log(queryString);
+        console.log(queryString, "***********");
+        console.log(vals, "VALS****")
         connection.query(queryString, vals, function(err, result) {
             if (err) {
                 throw err;
@@ -49,14 +45,15 @@ var orm = {
         });
     },
     update: function(table, objColVals, condition, cb) {
+        console.log(objColVals, "OBJCOLVALS")
         var queryString = "UPDATE " + table;
 
-        queryString += " SET";
+        queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";
         queryString += condition;
 
-        console.log(queryString);
+        console.log(queryString, "QUERYSTRING");
         connection.query(queryString, function(err, result){
             if (err) {
                 throw err;
@@ -65,6 +62,7 @@ var orm = {
         }); 
     },
     delete: function(table, condition, cb) {
+        console.log(queryString, "queryStringGGGGgggG")
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;

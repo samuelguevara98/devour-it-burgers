@@ -10,17 +10,18 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("api/burgers", function(req, res) {
-    console.log(req.body)
+router.post("/api/burgers", function(req, res) {
+    console.log(req.body, "***API*****")
     burger.create([
         "burgerType"
     ], [req.body.name], function(result) {
-        console.log(res)
+        console.log(res, "burgerType****")
         res.json({ id: result.insertId });
     });
 });
 
 router.put("/api/burgers/:id", function(req, res) {
+    console.log("THIS IS BEING CALLED AGAIN")
     const condition = "id = " + req.params.id;
     console.log("condition", condition);
     console.log(req.body.devoured)
@@ -35,9 +36,9 @@ router.put("/api/burgers/:id", function(req, res) {
     });
 });
 
-router.delete("api/burgers/:id", function(req, res) {
+router.delete("/api/burgers/:id", function(req, res) {
     const condition = "id = " + req.params.id;
-
+    
     burger.delete(condition, function(result) {
         if (result.affectedRows == 0) {
             return res.status(404).end();

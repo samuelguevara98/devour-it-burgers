@@ -4,7 +4,7 @@
 <form class="create-form">
     <div class="from-group">
         <label for="burger">Burger Type:</label>
-        <input type="text" id="burger" name="burgerType">
+        <input type="text" id="burg" name="burgerType">
     </div>
     <button type="submit">Add a burger</button>
 </form>
@@ -14,7 +14,7 @@
     {{#unless devoured}}
     <li>
         {{burgerType}}
-        <button class="change-devoured" data-id="{{id}}" data-newburger="{{devoured}}">
+        <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
             {{#if devoured}}DEVOURED!{{else}}DEVOURED!{{/if}}
         </button>
     </li>
@@ -28,7 +28,7 @@
     {{#if devoured}}
     <li>
         {{burgerType}}
-        <button class="deleteBurger" data-id="{{this.id}}">Delete!</button>
+        <button class="delete-burger" data-id="{{this.id}}">Delete!</button>
     </li>
     {{/if}}
     {{/each}}

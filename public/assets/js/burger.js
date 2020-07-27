@@ -1,4 +1,4 @@
-$(function() {
+//$(function() {
     $(".change-devoured").on("click", function(event) {
         console.log("something")
       var id = $(this).data("id");
@@ -7,7 +7,7 @@ $(function() {
       var newDevourState = {
         devoured: newDevour
       };
-  
+      console.log(id, newDevourState, "NEWDEVOURSTATE");
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
@@ -24,12 +24,12 @@ $(function() {
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
-  
+      console.log("this is being called");
       var newBurger = {
         name: $("#burg").val().trim(),
         devoured: false
       };
-  console.log(newBurger)
+  console.log(newBurger, "***Newburger***")
       // Send the POST request.
       $.ajax("/api/burgers", {
         type: "POST",
@@ -45,6 +45,7 @@ $(function() {
   
     $(".delete-burger").on("click", function(event) {
       var id = $(this).data("id");
+      console.log("this is being called", id)
   
       // Send the DELETE request.
       $.ajax("/api/burgers/" + id, {
@@ -57,5 +58,5 @@ $(function() {
         }
       );
     });
-  });
+//  });
   
