@@ -1,5 +1,4 @@
-const connection = require("../config/connection.js");
-const { query } = require("express");
+var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
     var arr = [];

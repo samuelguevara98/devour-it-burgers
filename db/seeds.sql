@@ -1,4 +1,4 @@
-USE burgersDB;
+USE burgersdb;
 
 INSERT INTO burgers (burgerType) VALUES ('TexMex');
 INSERT INTO burgers (burgerType) VALUES ('Green Chili Burger');

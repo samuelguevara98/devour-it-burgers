@@ -1,4 +1,4 @@
-<img src="/assets/img/burger.png" alt="burger">
+<img src="/assets/img/burger.png" alt="burger" class="center">
 <h1>Devour it Burgers</h1>
 <h2>Add Burgers!</h2>
 <form class="create-form">
@@ -11,10 +11,10 @@
 
 <ul>
     {{#each burgers}}
-    {{unless devoured}}
+    {{#unless devoured}}
     <li>
         {{burgerType}}
-        <button class="changeDevour" data-id="{{id}}" data-newburger="{{devoured}}">
+        <button class="change-devoured" data-id="{{id}}" data-newburger="{{devoured}}">
             {{#if devoured}}DEVOURED!{{else}}DEVOURED!{{/if}}
         </button>
     </li>
